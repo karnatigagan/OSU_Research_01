@@ -1,1 +1,91 @@
 
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database GK;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> CREATE TABLE student (
+    ->     studen_id INT PRIMARY KEY,
+    ->     name VARCHAR(20),
+    ->     major VARCHAR(20)
+    -> 
+    -> );
+ERROR 1046 (3D000): No database selected
+mysql> 
+mysql> GK
+    -> CREATE TABLE student (
+    ->     studen_id INT PRIMARY KEY,
+    ->     name VARCHAR(20),
+    ->     major VARCHAR(20)
+    -> 
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GK
+CREATE TABLE student (
+    studen_id INT PRIMARY KEY,
+    name VARCHAR(20),
+ ' at line 1
+mysql> USE your_database_name;
+ERROR 1049 (42000): Unknown database 'your_database_name'
+mysql> 
+mysql> CREATE TABLE student (
+    ->     student_id INT PRIMARY KEY,
+    ->     name VARCHAR(20),
+    ->     major VARCHAR(20)
+    -> );USE your_database_name;
+ERROR 1046 (3D000): No database selected
+ERROR 1049 (42000): Unknown database 'your_database_name'
+mysql> 
+mysql> CREATE TABLE student (
+    ->     student_id INT PRIMARY KEY,
+    ->     name VARCHAR(20),
+    ->     major VARCHAR(20)
+    -> );
+ERROR 1046 (3D000): No database selected
+mysql> USE GK
+Database changed
+mysql> CREATE TABLE student (
+    ->     student_id INT PRIMARY KEY,
+    ->     name VARCHAR(20),
+    ->     major VARCHAR(20)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DESCRIBE student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| student_id | int         | NO   | PRI | NULL    |       |
+| name       | varchar(20) | YES  |     | NULL    |       |
+| major      | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> INSERT INTO student VALUES(1, 'Jack', 'Biology');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> SELECT * FROM student;
++------------+------+---------+
+| student_id | name | major   |
++------------+------+---------+
+|          1 | Jack | Biology |
++------------+------+---------+
+1 row in set (0.01 sec)
+
+mysql> INSERT INTO student VALUES(2, 'Kate', 'Sociology')
+    -> 
+    -> ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM student;
++------------+------+-----------+
+| student_id | name | major     |
++------------+------+-----------+
+|          1 | Jack | Biology   |
+|          2 | Kate | Sociology |
++------------+------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> cd path/to/your/script
+    -> 
+    -> 
+
